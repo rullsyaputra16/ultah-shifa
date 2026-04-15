@@ -1,12 +1,12 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #1a1a1a, #2b2b2b);
-  color: white;
+  background: linear-gradient(135deg, #1a1a1a, #2a1f26);
+  color: #f5f5f5;
   text-align: center;
 }
 
-/* container full layar */
+/* container */
 .container {
   min-height: 100vh;
   display: flex;
@@ -15,40 +15,61 @@ body {
   padding: 20px;
 }
 
-/* slide */
+/* slide card */
 .slide {
   display: none;
   width: 100%;
-  max-width: 350px;
+  max-width: 340px;
+  padding: 25px 20px;
   margin: auto;
-  padding: 10px;
+  border-radius: 20px;
+
+  background: rgba(255, 192, 203, 0.05);
+  backdrop-filter: blur(12px);
+
+  box-shadow: 0 10px 30px rgba(255, 192, 203, 0.15);
+
+  animation: fade 0.5s ease;
 }
 
 .slide.active {
   display: block;
 }
 
+/* garis kecil aesthetic */
+.slide::before {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 4px;
+  background: pink;
+  border-radius: 10px;
+  margin: 0 auto 15px;
+}
+
 /* judul */
 h1 {
   font-size: 26px;
   margin-bottom: 10px;
+  color: #ffd1dc;
 }
 
 /* teks */
 p {
   font-size: 17px;
   line-height: 1.7;
-  margin: 10px 0;
+  color: #eaeaea;
 }
 
 /* gambar */
 img {
   width: 80%;
-  max-width: 280px;
+  max-width: 260px;
   border-radius: 15px;
   margin: 20px auto;
   display: block;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+
+  box-shadow: 0 8px 25px rgba(255, 192, 203, 0.2);
 }
 
 /* tombol */
@@ -58,14 +79,28 @@ button {
   border: none;
   background: pink;
   color: black;
-  border-radius: 10px;
+  border-radius: 20px;
   font-weight: bold;
   font-size: 14px;
   cursor: pointer;
+
+  box-shadow: 0 5px 15px rgba(255,192,203,0.4);
   transition: 0.3s;
 }
 
 button:hover {
   background: hotpink;
   color: white;
+}
+
+/* animasi */
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

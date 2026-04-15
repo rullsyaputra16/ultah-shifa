@@ -13,6 +13,27 @@ function nextSlide() {
   }
 }
 
+// MUSIC
+const music = document.getElementById("bgMusic");
+const musicBtn = document.getElementById("musicBtn");
+
+function toggleMusic() {
+  if (music.paused) {
+    music.play();
+    musicBtn.innerText = "⏸ Pause";
+  } else {
+    music.pause();
+    musicBtn.innerText = "🎵 Play";
+  }
+}
+
+// auto play setelah klik pertama
+document.body.addEventListener("click", function () {
+  if (music.paused) {
+    music.play();
+  }
+}, { once: true });
+
 // LOVE EFFECT
 function createLove() {
   const love = document.createElement("div");

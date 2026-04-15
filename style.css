@@ -6,6 +6,7 @@ body {
   text-align: center;
 }
 
+/* container */
 .container {
   min-height: 100vh;
   display: flex;
@@ -14,15 +15,19 @@ body {
   padding: 20px;
 }
 
+/* card */
 .slide {
   display: none;
   width: 100%;
   max-width: 340px;
   padding: 25px 20px;
   border-radius: 20px;
+
   background: rgba(255, 192, 203, 0.05);
   backdrop-filter: blur(12px);
+
   box-shadow: 0 10px 30px rgba(255, 192, 203, 0.15);
+
   animation: fade 0.5s ease;
 }
 
@@ -59,6 +64,7 @@ img {
   box-shadow: 0 8px 25px rgba(255, 192, 203, 0.2);
 }
 
+/* tombol */
 button {
   margin-top: 20px;
   padding: 12px 24px;
@@ -71,12 +77,23 @@ button {
   box-shadow: 0 5px 15px rgba(255,192,203,0.4);
 }
 
+/* tombol musik */
+#musicBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 12px;
+  padding: 10px 15px;
+  border-radius: 20px;
+}
+
+/* animasi */
 @keyframes fade {
   from { opacity: 0; transform: translateY(15px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* LOVE EFFECT */
+/* LOVE */
 .love {
   position: fixed;
   top: -10px;

@@ -1,3 +1,4 @@
+// ===== SLIDE =====
 let current = 0;
 const slides = document.querySelectorAll(".slide");
 
@@ -13,7 +14,8 @@ function nextSlide() {
   }
 }
 
-// MUSIC
+
+// ===== MUSIC =====
 const music = document.getElementById("bgMusic");
 const musicBtn = document.getElementById("musicBtn");
 
@@ -27,14 +29,15 @@ function toggleMusic() {
   }
 }
 
-// auto play setelah klik pertama
+// autoplay setelah klik pertama
 document.body.addEventListener("click", function () {
   if (music.paused) {
     music.play();
   }
 }, { once: true });
 
-// LOVE EFFECT
+
+// ===== LOVE EFFECT =====
 function createLove() {
   const love = document.createElement("div");
   love.className = "love";

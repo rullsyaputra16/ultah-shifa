@@ -15,7 +15,7 @@ body {
   padding: 20px;
 }
 
-/* card */
+/* card slide */
 .slide {
   display: none;
   width: 100%;
@@ -35,6 +35,7 @@ body {
   display: block;
 }
 
+/* garis kecil aesthetic */
 .slide::before {
   content: "";
   display: block;
@@ -45,16 +46,19 @@ body {
   margin: 0 auto 15px;
 }
 
+/* judul */
 h1 {
   font-size: 26px;
   color: #ffd1dc;
 }
 
+/* teks */
 p {
   font-size: 17px;
   line-height: 1.7;
 }
 
+/* gambar */
 img {
   width: 80%;
   max-width: 260px;
@@ -75,6 +79,12 @@ button {
   font-weight: bold;
   cursor: pointer;
   box-shadow: 0 5px 15px rgba(255,192,203,0.4);
+  transition: 0.3s;
+}
+
+button:hover {
+  background: hotpink;
+  color: white;
 }
 
 /* tombol musik */
@@ -89,11 +99,17 @@ button {
 
 /* animasi */
 @keyframes fade {
-  from { opacity: 0; transform: translateY(15px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* LOVE */
+/* love effect */
 .love {
   position: fixed;
   top: -10px;

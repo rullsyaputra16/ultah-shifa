@@ -6,7 +6,6 @@ body {
   text-align: center;
 }
 
-/* container */
 .container {
   min-height: 100vh;
   display: flex;
@@ -15,20 +14,15 @@ body {
   padding: 20px;
 }
 
-/* slide card */
 .slide {
   display: none;
   width: 100%;
   max-width: 340px;
   padding: 25px 20px;
-  margin: auto;
   border-radius: 20px;
-
   background: rgba(255, 192, 203, 0.05);
   backdrop-filter: blur(12px);
-
   box-shadow: 0 10px 30px rgba(255, 192, 203, 0.15);
-
   animation: fade 0.5s ease;
 }
 
@@ -36,7 +30,6 @@ body {
   display: block;
 }
 
-/* garis kecil aesthetic */
 .slide::before {
   content: "";
   display: block;
@@ -47,32 +40,25 @@ body {
   margin: 0 auto 15px;
 }
 
-/* judul */
 h1 {
   font-size: 26px;
-  margin-bottom: 10px;
   color: #ffd1dc;
 }
 
-/* teks */
 p {
   font-size: 17px;
   line-height: 1.7;
-  color: #eaeaea;
 }
 
-/* gambar */
 img {
   width: 80%;
   max-width: 260px;
   border-radius: 15px;
   margin: 20px auto;
   display: block;
-
   box-shadow: 0 8px 25px rgba(255, 192, 203, 0.2);
 }
 
-/* tombol */
 button {
   margin-top: 20px;
   padding: 12px 24px;
@@ -81,26 +67,27 @@ button {
   color: black;
   border-radius: 20px;
   font-weight: bold;
-  font-size: 14px;
   cursor: pointer;
-
   box-shadow: 0 5px 15px rgba(255,192,203,0.4);
-  transition: 0.3s;
 }
 
-button:hover {
-  background: hotpink;
-  color: white;
-}
-
-/* animasi */
 @keyframes fade {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* LOVE EFFECT */
+.love {
+  position: fixed;
+  top: -10px;
+  color: pink;
+  font-size: 14px;
+  animation: fall linear infinite;
+  opacity: 0.6;
+}
+
+@keyframes fall {
   to {
-    opacity: 1;
-    transform: translateY(0);
+    transform: translateY(110vh);
   }
 }

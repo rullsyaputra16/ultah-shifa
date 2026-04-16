@@ -1,43 +1,61 @@
-let current = 0;
-const slides = document.querySelectorAll(".slide");
-
-function showSlide(index) {
-  slides.forEach(s => s.classList.remove("active"));
-  slides[index].classList.add("active");
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #1a1a1a, #2a1f26);
+  color: #f5f5f5;
+  text-align: center;
 }
 
-function nextSlide() {
-  current++;
-  if (current < slides.length) {
-    showSlide(current);
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* PENTING */
+.slide {
+  display: none;
+  width: 100%;
+  max-width: 340px;
+  padding: 20px;
+}
+
+.slide.active {
+  display: block;
+}
+
+img {
+  width: 80%;
+  border-radius: 15px;
+  margin: 20px auto;
+}
+
+button {
+  padding: 10px 20px;
+  background: pink;
+  border: none;
+  border-radius: 20px;
+}
+
+/* LOVE */
+.love {
+  position: fixed;
+  top: -10px;
+  color: #ff7aa2;
+  font-size: 16px;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh);
   }
 }
 
-// MUSIC
-const music = document.getElementById("bgMusic");
-
-function toggleMusic() {
-  if (music.paused) {
-    music.play().catch(()=>{});
-  } else {
-    music.pause();
-  }
+/* MUSIC BUTTON */
+#musicBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
 }
-
-// LOVE EFFECT (FIXED)
-function createLove() {
-  const love = document.createElement("div");
-  love.className = "love";
-  love.innerHTML = "❤";
-
-  love.style.left = Math.random() * 100 + "vw";
-  love.style.animationDuration = (3 + Math.random() * 2) + "s";
-
-  document.body.appendChild(love);
-
-  setTimeout(() => {
-    love.remove();
-  }, 5000);
-}
-
-setInterval(createLove, 300);

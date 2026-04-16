@@ -2,133 +2,48 @@ body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
   background: linear-gradient(135deg, #1a1a1a, #2a1f26);
-  color: #f5f5f5;
+  color: white;
   text-align: center;
 }
 
-/* container */
 .container {
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
 }
 
-/* card slide */
 .slide {
   display: none;
-  width: 100%;
   max-width: 340px;
-  padding: 25px 20px;
-  border-radius: 20px;
-
-  background: rgba(255, 192, 203, 0.06);
-  backdrop-filter: blur(12px);
-
-  box-shadow: 0 10px 30px rgba(255, 192, 203, 0.12);
-
-  animation: fade 0.5s ease;
+  padding: 20px;
 }
 
 .slide.active {
   display: block;
 }
 
-/* garis aesthetic */
-.slide::before {
-  content: "";
-  display: block;
-  width: 50px;
-  height: 4px;
-  background: pink;
-  border-radius: 10px;
-  margin: 0 auto 15px;
-  opacity: 0.8;
-}
-
-/* judul */
-h1 {
-  font-size: 26px;
-  color: #ffd1dc;
-  text-shadow: 0 0 8px rgba(255, 192, 203, 0.4);
-}
-
-/* teks */
-p {
-  font-size: 17px;
-  line-height: 1.7;
-  color: #eaeaea;
-}
-
-/* gambar */
 img {
   width: 80%;
-  max-width: 260px;
   border-radius: 15px;
   margin: 20px auto;
-  display: block;
-  box-shadow: 0 8px 25px rgba(255, 192, 203, 0.25);
-  transition: 0.3s;
 }
 
-/* efek hover (desktop doang, tapi aman) */
-img:hover {
-  transform: scale(1.03);
-}
-
-/* tombol */
 button {
-  margin-top: 20px;
-  padding: 12px 24px;
-  border: none;
+  padding: 10px 20px;
   background: pink;
-  color: black;
+  border: none;
   border-radius: 20px;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 5px 15px rgba(255,192,203,0.4);
-  transition: 0.3s;
 }
 
-button:hover {
-  background: hotpink;
-  color: white;
-  transform: scale(1.05);
-}
-
-/* tombol musik */
-#musicBtn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  font-size: 12px;
-  padding: 10px 15px;
-  border-radius: 20px;
-  z-index: 999; /* biar ga ketutup slide */
-}
-
-/* animasi masuk */
-@keyframes fade {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* LOVE EFFECT */
+/* ===== LOVE FIX ===== */
 .love {
   position: fixed;
   top: -10px;
-  color: pink;
-  font-size: 14px;
+  color: #ff7aa2;
+  font-size: 18px;
   animation: fall linear infinite;
-  opacity: 0.5;
-  pointer-events: none; /* biar ga ganggu klik */
+  z-index: 9999;
 }
 
 @keyframes fall {

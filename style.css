@@ -1,53 +1,43 @@
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #1a1a1a, #2a1f26);
-  color: white;
-  text-align: center;
+let current = 0;
+const slides = document.querySelectorAll(".slide");
+
+function showSlide(index) {
+  slides.forEach(s => s.classList.remove("active"));
+  slides[index].classList.add("active");
 }
 
-.container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.slide {
-  display: none;
-  max-width: 340px;
-  padding: 20px;
-}
-
-.slide.active {
-  display: block;
-}
-
-img {
-  width: 80%;
-  border-radius: 15px;
-  margin: 20px auto;
-}
-
-button {
-  padding: 10px 20px;
-  background: pink;
-  border: none;
-  border-radius: 20px;
-}
-
-/* ===== LOVE FIX ===== */
-.love {
-  position: fixed;
-  top: -10px;
-  color: #ff7aa2;
-  font-size: 18px;
-  animation: fall linear infinite;
-  z-index: 9999;
-}
-
-@keyframes fall {
-  to {
-    transform: translateY(110vh);
+function nextSlide() {
+  current++;
+  if (current < slides.length) {
+    showSlide(current);
   }
 }
+
+// MUSIC
+const music = document.getElementById("bgMusic");
+
+function toggleMusic() {
+  if (music.paused) {
+    music.play().catch(()=>{});
+  } else {
+    music.pause();
+  }
+}
+
+// LOVE EFFECT (FIXED)
+function createLove() {
+  const love = document.createElement("div");
+  love.className = "love";
+  love.innerHTML = "❤";
+
+  love.style.left = Math.random() * 100 + "vw";
+  love.style.animationDuration = (3 + Math.random() * 2) + "s";
+
+  document.body.appendChild(love);
+
+  setTimeout(() => {
+    love.remove();
+  }, 5000);
+}
+
+setInterval(createLove, 300);
